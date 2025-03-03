@@ -18,6 +18,10 @@ app.use("/api/users", userRoutes);
 app.use("/api/todos", todoRoutes);
 
 /////
+app.get("/", (req, res) => {
+  res.send("Server is running!");
+});
+
 
 
 mongoose.connect(process.env.MONGO_URI)
