@@ -8,15 +8,18 @@ const todoRoutes = require("./routes/todoroute");
 
 const app = express();
 
-// Middleware
 app.use(express.json());
 app.use(cors());
 
-// Routes
+
+/////
+
 app.use("/api/users", userRoutes);
 app.use("/api/todos", todoRoutes);
 
-// Connect to MongoDB
+/////
+
+
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
